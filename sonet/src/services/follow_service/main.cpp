@@ -16,6 +16,7 @@
 #include <chrono>
 #include <spdlog/spdlog.h>
 #include <nlohmann/json.hpp>
+#include "../../core/logging/logger.h"
 
 using namespace sonet::follow;
 using json = nlohmann::json;
@@ -76,9 +77,8 @@ void setup_signal_handlers() {
 
 // Initialize logging
 void initialize_logging() {
-    spdlog::set_level(spdlog::level::info);
-    spdlog::set_pattern("[%Y-%m-%d %H:%M:%S.%e] [%l] [%t] %v");
-    spdlog::info("Sonet Follow Service logging initialized");
+    (void)sonet::logging::init_json_stdout_logger();
+    spdlog::info(R"({"event":"startup","message":"Sonet Follow Service logging initialized"})");
 }
 
 // Display service information

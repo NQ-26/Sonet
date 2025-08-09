@@ -10,12 +10,15 @@
 
 #include <grpcpp/grpcpp.h>
 #include <iostream>
+#include "../../core/logging/logger.h"
 
 using grpc::Server;
 using grpc::ServerBuilder;
 
 int main(int argc, char** argv) {
 	(void)argc; (void)argv;
+	(void)sonet::logging::init_json_stdout_logger();
+	spdlog::info(R"({"event":"startup","message":"Starting Sonet Media Service"})");
 	// Natural comments: tune via env/flags later; good defaults for dev
 	std::string listen_addr = "0.0.0.0:50053"; // avoid clashing with other services
 	std::string local_store_dir = "/tmp/sonet-media";

@@ -1,0 +1,22 @@
+filebeat.autodiscover:
+  providers:
+    - type: docker
+      hints.enabled: true
+      labels.dedot: true
+
+processors:
+  - add_docker_metadata: ~
+  - add_host_metadata: ~
+  - add_process_metadata: ~
+
+logging:
+  level: info
+  metrics:
+    enabled: false
+
+output.logstash:
+  hosts: ["logstash:5044"]
+
+setup:
+  ilm.enabled: false
+  template.enabled: false

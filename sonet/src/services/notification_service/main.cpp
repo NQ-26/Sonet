@@ -10,6 +10,7 @@
 
 #include "service.h"
 #include <iostream>
+#include "../../core/logging/logger.h"
 #include <csignal>
 #include <memory>
 #include <thread>
@@ -209,17 +210,9 @@ NotificationServiceConfig load_configuration(int argc, char* argv[]) {
  * Setup logging based on environment
  */
 void setup_logging(const std::string& environment) {
-    const char* log_level = std::getenv("SONET_LOG_LEVEL");
-    std::string level = log_level ? log_level : "info";
-    
-    if (environment == "development") {
-        level = "debug";
-    } else if (environment == "testing") {
-        level = "warn";
-    }
-    
-    // Here you would setup your logging framework
-    std::cout << "Log level set to: " << level << std::endl;
+    (void)environment;
+    (void)sonet::logging::init_json_stdout_logger();
+    spdlog::info(R"({"event":"startup","message":"Notification logging initialized"})");
 }
 
 /**

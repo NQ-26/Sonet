@@ -9,6 +9,7 @@
 #include "user_service.h"
 #include <grpcpp/grpcpp.h>
 #include <spdlog/spdlog.h>
+#include "../../../core/logging/logger.h"
 #include <csignal>
 #include <memory>
 #include <cstdlib>
@@ -28,11 +29,9 @@ void signal_handler(int signal) {
 }
 
 int main(int argc, char* argv[]) {
-    // Set up logging - I want to see everything that's happening
-    spdlog::set_level(spdlog::level::info);
-    spdlog::set_pattern("[%Y-%m-%d %H:%M:%S.%e] [%l] %v");
-    
-    spdlog::info("Starting Sonet User Service...");
+    // Initialize JSON logger for ELK ingestion
+    (void)sonet::logging::init_json_stdout_logger();
+    spdlog::info(R"({"event":"startup","message":"Starting Sonet User Service"})");
     
     // Set up signal handlers for graceful shutdown
     std::signal(SIGINT, signal_handler);
