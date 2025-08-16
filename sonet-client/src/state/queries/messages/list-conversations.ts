@@ -1,6 +1,15 @@
 import React from 'react'
 import {useSonetListChatsQuery} from './sonet/list-conversations'
 
+export const RQKEY_LIST_CONVOS = 'list-conversations'
+
+// Helper function for profile shadow cache
+export function findAllProfilesInListConvosQueryData(queryClient: any, userId: string) {
+  // This function is used by the profile shadow cache
+  // For now, return an empty generator since we don't have the full implementation
+  return []
+}
+
 // Re-export to satisfy existing imports throughout the app which point to
 // `#/state/queries/messages/list-conversations`.
 export function useListConvosQuery(params: {status?: 'accepted' | 'request'; enabled?: any} = {}) {

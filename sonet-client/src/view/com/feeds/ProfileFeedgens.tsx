@@ -1,11 +1,11 @@
 import React from 'react'
 import {
-  findNodeUsername,
   type ListRenderItemInfo,
   type StyleProp,
   View,
   type ViewStyle,
 } from 'react-native'
+import {findNodeUsername} from '#/shims/findNodeUsername'
 import {msg} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {useQueryClient} from '@tanstack/react-query'

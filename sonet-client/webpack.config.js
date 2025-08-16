@@ -38,6 +38,8 @@ module.exports = async function (env, argv) {
     '@sonet/api': path.resolve(__dirname, 'src/lib/api/sonet-api.ts'),
     '@sonet/api/dist': path.resolve(__dirname, 'src/lib/api/dist'),
     '@sonet/types': path.resolve(__dirname, 'src/types/sonet.ts'),
+    // Fix zeego resolution
+    'zeego/lib/typescript/menu': path.resolve(__dirname, 'node_modules/zeego/lib/typescript/menu'),
     // Stubs for optional native/libs not needed on web
     'statsig-react': path.resolve(__dirname, 'src/shims/statsig-react.ts'),
     '@sentry/react-native': path.resolve(__dirname, 'src/shims/sentry-react-native.web.ts'),

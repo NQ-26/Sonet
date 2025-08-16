@@ -9,7 +9,7 @@ import {
   AtUri,
   type ModerationOpts,
 } from '@sonet/api'
-import {type GeneratorView} from '@sonet/api/dist/client/types/app/bsky/feed/defs'
+import {type GeneratorView} from '#/shims/sonet-api-types'
 import {msg, Plural, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {useFocusEffect, useNavigation} from '@react-navigation/native'

@@ -1,5 +1,5 @@
 import {View} from 'react-native'
-import {useCallback, useMemo} from 'react'
+import React, {useCallback, useMemo} from 'react'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {useNavigation} from '@react-navigation/native'
@@ -7,8 +7,8 @@ import {useNavigation} from '@react-navigation/native'
 import {useSession} from '#/state/session'
 import {atoms as a, useTheme} from '#/alf'
 import {Button, ButtonIcon, ButtonText} from '#/components/Button'
-import {Close_Stroke2_Corner0_Rounded as CloseIcon} from '#/components/icons/Close'
-import {ExternalLink_Stroke2_Corner0_Rounded as ExternalLinkIcon} from '#/components/icons/ExternalLink'
+import {Close_Stroke2_Corner0_Rounded as CloseIcon} from '#/components/icons/Times'
+import {ExternalLink_Stroke2_Corner0_Rounded as ExternalLinkIcon} from '#/components/icons/Times'
 import {Image_Stroke2_Corner0_Rounded as ImageIcon} from '#/components/icons/Image'
 import {Text} from '#/components/Typography'
 import {Avatar} from '#/view/com/util/Avatar'
@@ -17,6 +17,19 @@ import {isBskyNoteUrl} from '#/lib/urls/isBskyNoteUrl'
 import {useRichText} from '#/lib/hooks/useRichText'
 import {useModerationCause} from '#/lib/moderation/useModerationCause'
 import {useModerationCauseLabel} from '#/lib/moderation/useModerationCauseLabel'
+
+export function useMessageEmbed() {
+  const [embedUri, setEmbedUri] = React.useState<string | null>(null)
+  
+  const setEmbed = React.useCallback((uri: string | null) => {
+    setEmbedUri(uri)
+  }, [])
+  
+  return {
+    embedUri,
+    setEmbed,
+  }
+}
 
 export function MessageInputEmbed({
   embed,

@@ -100,6 +100,31 @@ export function Content({
   )
 }
 
+// Add missing Header components
+export function Right({children, ...props}: any) {
+  return (
+    <View style={[a.flex_row, a.align_center, a.gap_sm]} {...props}>
+      {children}
+    </View>
+  )
+}
+
+export function Button({children, onPress, ...props}: any) {
+  return (
+    <View style={[a.flex_row, a.align_center]} onTouchEnd={onPress} {...props}>
+      {children}
+    </View>
+  )
+}
+
+export function ButtonText({children, ...props}: any) {
+  return (
+    <Text style={[a.text_sm, a.font_medium]} {...props}>
+      {children}
+    </Text>
+  )
+}
+
 export function Slot({children}: {children?: React.ReactNode}) {
   return <View style={[a.z_50, {width: HEADER_SLOT_SIZE}]}>{children}</View>
 }

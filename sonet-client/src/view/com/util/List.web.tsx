@@ -5,7 +5,7 @@ import {
   View,
   type ViewProps,
 } from 'react-native'
-import {type ReanimatedScrollEvent} from 'react-native-reanimated/lib/typescript/hook/commonTypes'
+import {type ReanimatedScrollEvent} from '#/shims/react-native-reanimated-types'
 
 import {batchedUpdates} from '#/lib/batchedUpdates'
 import {useNonReactiveCallback} from '#/lib/hooks/useNonReactiveCallback'

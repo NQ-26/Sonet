@@ -47,6 +47,23 @@ export * from '#/components/Dialog/shared'
 export * from '#/components/Dialog/types'
 export * from '#/components/Dialog/utils'
 
+// Add missing Handle component
+export const Handle = () => {
+  const t = useTheme()
+  return (
+    <View
+      style={[
+        a.w_12,
+        a.h_1,
+        a.rounded_full,
+        a.mx_auto,
+        a.my_sm,
+        t.atoms.bg_contrast_25,
+      ]}
+    />
+  )
+}
+
 export const Input = createInput(TextInput)
 
 export function Outer({

@@ -1,9 +1,9 @@
 import React from 'react'
 import {
-  BSKY_LABELER_UserID,
   type ModerationCause,
   type ModerationCauseSource,
 } from '@sonet/api'
+import {BSKY_LABELER_UserID} from '../constants'
 import {msg} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 

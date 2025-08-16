@@ -70,6 +70,33 @@ export function Group({
   )
 }
 
+export function Toggle({
+  value,
+  onValueChange,
+  disabled = false,
+  style,
+}: {
+  value: boolean
+  onValueChange: (value: boolean) => void
+  disabled?: boolean
+  style?: StyleProp<ViewStyle>
+}) {
+  const t = useTheme()
+  return (
+    <View style={[a.flex_row, a.align_center, a.justify_between, style]}>
+      <Text style={[a.text_sm, a.color_secondary]}>{value ? 'On' : 'Off'}</Text>
+      <Button.Button
+        variant="outline"
+        size="sm"
+        onPress={() => onValueChange(!value)}
+        disabled={disabled}
+        style={[a.px_sm, a.py_xs]}>
+        <Button.ButtonText>{value ? 'Disable' : 'Enable'}</Button.ButtonText>
+      </Button.Button>
+    </View>
+  )
+}
+
 export function Item({
   children,
   destructive,

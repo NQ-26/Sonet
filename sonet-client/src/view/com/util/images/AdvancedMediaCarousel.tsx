@@ -3,10 +3,12 @@ import {
   View,
   StyleSheet,
   Dimensions,
+} from 'react-native'
+import {
   PanGestureHandler,
   State,
   GestureHandlerRootView,
-} from 'react-native'
+} from '#/shims/react-native-gesture-handler'
 import Animated, {
   useSharedValue,
   useAnimatedStyle,

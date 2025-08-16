@@ -25,7 +25,7 @@ import {Email2FAToggle} from './components/Email2FAToggle'
 import {PwiOptOut} from './components/PwiOptOut'
 import {PrivateProfileToggle} from './components/PrivateProfileToggle'
 import {ItemTextWithSubtitle} from './NotificationSettings/components/ItemTextWithSubtitle'
-import screenshotProtection from '@/services/screenshotProtection'
+import screenshotProtection from '#/services/screenshotProtection'
 
 type Props = NativeStackScreenProps<
   CommonNavigatorParams,

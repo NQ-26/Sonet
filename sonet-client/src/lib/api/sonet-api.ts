@@ -348,6 +348,10 @@ export function interpretLabelValueDefinition(def: any): any {
   return def
 }
 
+export function interpretLabelValueDefinitions(defs: any[]): any[] {
+  return defs.map(def => interpretLabelValueDefinition(def))
+}
+
 export type LabelPreference = 'ignore' | 'warn' | 'hide'
 
 export type ModerationBehavior = 'warn' | 'hide' | 'blur'
@@ -364,16 +368,7 @@ export type ModerationDecision = {
   }
 }
 
-export function moderateNote(note: any, moderationOpts: any): ModerationDecision {
-  return {
-    ui: (context: string) => ({
-      blur: false,
-      filter: false,
-      blurs: [],
-      filters: [],
-    }),
-  }
-}
+
 
 export function moderateProfile(profile: any, moderationOpts: any): ModerationDecision {
   return {
@@ -397,7 +392,165 @@ export namespace SonetActorGetProfile {
   export type OutputSchema = any
 }
 
+export namespace SonetFeedGetAuthorFeed {
+  export class BlockedActorError extends Error {
+    constructor(message: string) {
+      super(message)
+      this.name = 'BlockedActorError'
+    }
+  }
+  
+  export class BlockedByActorError extends Error {
+    constructor(message: string) {
+      super(message)
+      this.name = 'BlockedByActorError'
+    }
+  }
+}
+
+export namespace SonetGraphFollow {
+  export type Record = {
+    createdAt: string
+    subject: string
+  }
+  
+  export function isRecord(v: unknown): v is Record {
+    return !!v && typeof v === 'object' && 'createdAt' in (v as any) && 'subject' in (v as any)
+  }
+}
+
+export namespace SonetFeedRenote {
+  export type Record = {
+    createdAt: string
+    subject: string
+  }
+  
+  export function isRecord(v: unknown): v is Record {
+    return !!v && typeof v === 'object' && 'createdAt' in (v as any) && 'subject' in (v as any)
+  }
+}
+
+export namespace SonetFeedLike {
+  export type Record = {
+    createdAt: string
+    subject: string
+  }
+  
+  export function isRecord(v: unknown): v is Record {
+    return !!v && typeof v === 'object' && 'createdAt' in (v as any) && 'subject' in (v as any)
+  }
+}
+
+export namespace SonetFeedNotegate {
+  export type Record = {
+    createdAt: string
+    subject: string
+  }
+  
+  export function isRecord(v: unknown): v is Record {
+    return !!v && typeof v === 'object' && 'createdAt' in (v as any) && 'subject' in (v as any)
+  }
+  
+  export function validateRecord(v: unknown): {success: boolean; value?: Record} {
+    return isRecord(v) ? {success: true, value: v} : {success: false}
+  }
+}
+
+export namespace SonetModerationDefs {
+  export const REASONAPPEAL = 'com.atproto.moderation.defs#reasonAppeal'
+}
+
+export class AtpAgent {
+  sessionManager: {
+    session: any
+  }
+  
+  constructor(config: {service: string}) {
+    this.sessionManager = {session: null}
+  }
+}
+
+export const nuxSchema = {
+  safeParse: (data: any) => ({success: true, data}),
+  parse: (data: any) => data,
+}
+
+export const DEFAULT_LABEL_SETTINGS = {
+  // Default label settings for moderation
+  'porn': 'hide',
+  'sexual': 'hide',
+  'violence': 'warn',
+  'hate': 'hide',
+  'spam': 'warn',
+  'impersonation': 'hide',
+}
+
+export class UnicodeString {
+  private _text: string
+  
+  constructor(text: string) {
+    this._text = text
+  }
+  
+  get utf16(): string {
+    return this._text
+  }
+  
+  slice(start: number, end: number): UnicodeString {
+    return new UnicodeString(this._text.slice(start, end))
+  }
+}
+
+export namespace SonetServerCreateSession {
+  export class AuthFactorTokenRequiredError extends Error {
+    constructor(message: string) {
+      super(message)
+      this.name = 'AuthFactorTokenRequiredError'
+    }
+  }
+}
+
+export function jsonStringToLex(jsonString: string): any {
+  try {
+    return JSON.parse(jsonString)
+  } catch {
+    return null
+  }
+}
+
+// Add missing SonetEmbedExternal namespace
+export namespace SonetEmbedExternal {
+  export function isView(embed: any): boolean {
+    return embed && embed.type === 'external'
+  }
+}
+
+// Re-export SonetAppAgent from sonet-agent
+export {SonetAppAgent} from '../state/session/sonet-agent'
+
 export function moderateUserList(list: any, moderationOpts: any): ModerationDecision {
+  return {
+    ui: (context: string) => ({
+      blur: false,
+      filter: false,
+      blurs: [],
+      filters: [],
+    }),
+  }
+}
+
+export function moderateFeedGenerator(feedGenerator: any, moderationOpts: any): ModerationDecision {
+  return {
+    ui: (context: string) => ({
+      blur: false,
+      filter: false,
+      blurs: [],
+      filters: [],
+    }),
+  }
+}
+
+export function moderateNotification(notification: any, moderationOpts: any): ModerationDecision {
   return {
     ui: (context: string) => ({
       blur: false,

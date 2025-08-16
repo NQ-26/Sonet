@@ -101,6 +101,10 @@ export function isBskyRSSUrl(url: string): boolean {
   )
 }
 
+export function isBskyAppUrl(url: string): boolean {
+  return url.startsWith('https://sonet.app/') || isRelativeUrl(url)
+}
+
 export function isExternalUrl(url: string): boolean {
   const external = !isBskyAppUrl(url) && url.startsWith('http')
   const rss = isBskyRSSUrl(url)

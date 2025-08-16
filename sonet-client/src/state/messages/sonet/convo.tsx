@@ -522,3 +522,13 @@ export function useSonetConvoDispatch(): React.Dispatch<SonetConvoActionTypes> {
 export function useSonetConvoActions() {
   return useSonetConvo().actions
 }
+
+// Add missing useConvoActive hook for compatibility
+export function useConvoActive() {
+  const {state} = useSonetConvo()
+  return {
+    isActive: state.status === 'ready',
+    isLoading: state.loading,
+    hasError: !!state.error
+  }
+}

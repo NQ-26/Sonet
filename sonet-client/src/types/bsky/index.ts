@@ -19,6 +19,13 @@ export function validate<T>(value: unknown, validator?: (v: unknown) => boolean)
 	}
 }
 
+// Add missing note namespace
+export namespace note {
+  export function parseEmbed(embed: any): any {
+    return embed
+  }
+}
+
 // Default export kept for existing imports like `import * as bsky from '#/types/bsky'`
-const bsky = { dangerousIsType, validate }
+const bsky = { dangerousIsType, validate, note }
 export default bsky

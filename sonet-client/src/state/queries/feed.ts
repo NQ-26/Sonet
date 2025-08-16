@@ -96,6 +96,30 @@ export function hydrateFeedGenerator(
   }
 }
 
+export function hydrateList(
+  listView: SonetListView,
+): FeedSourceInfo {
+  // For lists, we use list routing
+  const href = `/list/${listView.uri.split('/').pop()}`
+  const route = router.matchPath(href)
+
+  return {
+    type: 'list',
+    uri: listView.uri,
+    feedDescriptor: `list|${listView.uri}`,
+    cid: listView.cid,
+    route: {
+      href,
+      name: route[0],
+      params: route[1],
+    },
+    avatar: listView.avatar,
+    displayName: listView.displayName,
+    description: listView.description || '',
+    contentMode: undefined,
+  }
+}
+
 // For centralized feeds, we don't need complex URI parsing
 export function getFeedTypeFromUri(uri: string) {
   return uri.startsWith('feed|') ? 'feed' : 'timeline'

@@ -99,6 +99,21 @@ export interface MarkMessageAsReadAction extends SonetConvoAction {
   payload: string // messageId
 }
 
+// Add missing ConvoItem type for compatibility
+export interface ConvoItem {
+  id: string
+  type: 'message' | 'system'
+  content: string
+  timestamp: string
+  sender: {
+    id: string
+    username: string
+    displayName?: string
+    avatar?: string
+  }
+  status: 'sent' | 'delivered' | 'read' | 'failed'
+}
+
 // Pagination actions
 export interface SetHasMoreAction extends SonetConvoAction {
   type: 'SET_HAS_MORE'

@@ -8,7 +8,6 @@ import {useGlobalDialogsControlContext} from '#/components/dialogs/Context'
 import {emitSessionDropped} from '../events'
 import {
   sonetAgentToSessionAccount,
-  type SonetAppAgent,
   createSonetAgentAndCreateAccount,
   createSonetAgentAndLogin,
   createSonetAgentAndResume,

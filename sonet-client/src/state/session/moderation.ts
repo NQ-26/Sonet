@@ -1,4 +1,5 @@
-import {BSKY_LABELER_UserID, SonetAppAgent} from '@sonet/api'
+import {SonetAppAgent} from '@sonet/api'
+import {BSKY_LABELER_UserID} from '#/lib/constants'
 
 import {IS_TEST_USER} from '#/lib/constants'
 import {configureAdditionalModerationAuthorities} from './additional-moderation-authorities'

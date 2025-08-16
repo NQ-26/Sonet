@@ -10,6 +10,9 @@ export function __setSonetUploadBridge(fn: typeof sonetUploadBridge) {
   sonetUploadBridge = fn
 }
 
+// Make sure the function is properly exported
+export {__setSonetUploadBridge}
+
 /**
  * @param encoding Allows overriding the blob's type
  */

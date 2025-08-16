@@ -1,0 +1,13 @@
+diff --git a/dist/exports/StyleSheet/index.js b/dist/exports/StyleSheet/index.js
+index 1234567..abcdefg 100644
+--- a/dist/exports/StyleSheet/index.js
++++ b/dist/exports/StyleSheet/index.js
+@@ -12,7 +12,7 @@
+ 
+ import { atomic, classic, inline } from './compiler';
+ import { createSheet } from './dom';
+-import { localizeStyle } from 'styleq/transform-localize-style';
++import { localizeStyle } from '../../../../src/shims/styleq-transform-localize-style';
+ import { preprocess } from './preprocess';
+ import { styleq } from 'styleq';
+ import { validate } from './validate';

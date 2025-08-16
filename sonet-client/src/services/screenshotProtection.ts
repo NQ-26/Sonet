@@ -1,4 +1,4 @@
-import * as ScreenCapture from 'expo-screen-capture';
+import * as ScreenCapture from '#/shims/expo-screen-capture';
 import { Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 

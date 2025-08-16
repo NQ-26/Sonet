@@ -1,7 +1,7 @@
 import {useEffect, useRef} from 'react'
 import {useAnimatedScrollHandler as useAnimatedScrollHandler_BUGGY} from 'react-native-reanimated'
 
-export const useAnimatedScrollHandleuseAnimatedScrollHandler_BUGGY = (
+export const useAnimatedScrollHandler = (
   config,
   deps,
 ) => {

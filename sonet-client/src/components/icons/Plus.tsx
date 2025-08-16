@@ -7,3 +7,6 @@ export const PlusLarge_Stroke2_Corner0_Rounded = createSinglePathSVG({
 export const PlusSmall_Stroke2_Corner0_Rounded = createSinglePathSVG({
   path: 'M12 6a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H7a1 1 0 1 1 0-2h4V7a1 1 0 0 1 1-1Z',
 })
+
+// Add missing export for compatibility
+export const Plus_Stroke2_Corner0_Rounded = PlusLarge_Stroke2_Corner0_Rounded

@@ -1,6 +1,6 @@
 import React from 'react'
 import {type SonetUnspeccedGetTrends} from '@sonet/api'
-import {hasMutedWord} from '@sonet/api/dist/moderation/mutewords'
+import {hasMutedWord} from '#/lib/api/sonet-api'
 import {useQuery} from '@tanstack/react-query'
 
 import {

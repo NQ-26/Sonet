@@ -98,6 +98,23 @@ export function Root({children, isInvalid = false}: RootProps) {
 
 export function useSharedInputStyles() {
   const t = useTheme()
+
+// Add missing Item component
+export function Item({label, value, onChangeText, ...props}: any) {
+  return (
+    <View style={[a.flex_col, a.gap_xs]}>
+      <Text style={[a.text_sm, a.font_medium]}>{label}</Text>
+      <Input
+        value={value}
+        onChangeText={onChangeText}
+        {...props}
+      />
+    </View>
+  )
+}
+
+export function useSharedInputStyles() {
+  const t = useTheme()
   return useMemo(() => {
     const hover: ViewStyle[] = [
       {

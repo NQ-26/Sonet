@@ -1,6 +1,6 @@
 import React from 'react'
 import {type SonetGraphDefs, SonetGraphStarterpack} from '@sonet/api'
-import {type GeneratorView} from '@sonet/api/dist/client/types/app/bsky/feed/defs'
+import {type GeneratorView} from '#/shims/sonet-api-types'
 import {msg, plural} from '@lingui/macro'
 
 import {STARTER_PACK_MAX_SIZE} from '#/lib/constants'

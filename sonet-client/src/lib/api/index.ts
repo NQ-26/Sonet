@@ -15,12 +15,12 @@ import {
   RichText,
 } from '@sonet/api'
 import {TID} from '@sonet/types'
-import * as dcbor from '@ipld/dag-cbor'
+import * as dcbor from '#/shims/dag-cbor'
 import {t} from '@lingui/macro'
 import {type QueryClient} from '@tanstack/react-query'
 import {sha256} from 'js-sha256'
-import {CID} from 'multiformats/cid'
-import * as Hasher from 'multiformats/hashes/hasher'
+import {CID} from '#/shims/multiformats-cid'
+import {Hasher} from '#/shims/multiformats-hasher'
 
 import {isNetworkError} from '#/lib/strings/errors'
 import {shortenLinks, stripInvalidMentions} from '#/lib/strings/rich-text-manip'

@@ -50,6 +50,21 @@ export interface SonetFeedGenerator {
   indexedAt: string
 }
 
+export interface SonetListView {
+  uri: string
+  cid: string
+  did: string
+  creator: SonetUser
+  displayName: string
+  description?: string
+  descriptionFacets?: any[]
+  avatar?: string
+  likeCount: number
+  viewer?: any
+  indexedAt: string
+  purpose: 'app.bsky.graph.defs#modlist' | 'app.bsky.graph.defs#curatelist'
+}
+
 export interface SonetNoteRecord {
   uri: string
   cid: string

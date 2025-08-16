@@ -1,7 +1,7 @@
 import {useMemo} from 'react'
 import {View} from 'react-native'
 import {type SonetNotificationDefs} from '@sonet/api'
-import {type FilterablePreference} from '@sonet/api/dist/client/types/app/bsky/notification/defs'
+import {type FilterablePreference} from '#/shims/sonet-api-types'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 

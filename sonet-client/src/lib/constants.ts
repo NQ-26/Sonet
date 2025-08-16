@@ -129,6 +129,52 @@ export const SONET_FEED_OWNER_IDS = [
   'sonet.recommended',
 ]
 
+// Legacy Bluesky constants for migration compatibility
+export const BSKY_FEED_OWNER_UserIDS = [
+  'bsky.app',
+  'bsky.team',
+  'bsky.social'
+]
+
+export const DISCOVER_FEED_URI = 'at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/whats-hot'
+export const VIDEO_FEED_URI = 'at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/video'
+
+export const PROD_DEFAULT_FEED = (feed: string) => `at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/${feed}`
+
+export const VIDEO_FEED_URIS = [
+  'at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/video'
+]
+
+// Legacy Bluesky constants for migration compatibility
+export const BSKY_APP_ACCOUNT_UserID = 'userId:plc:z72i7hdynmk6r22z27h6tvur'
+export const PUBLIC_APPVIEW = 'https://bsky.social'
+export const PUBLIC_APPVIEW_UserID = 'userId:plc:z72i7hdynmk6r22z27h6tvur'
+
+// Saved feed constants for onboarding
+export const DISCOVER_SAVED_FEED = {
+  type: 'feed' as const,
+  value: DISCOVER_FEED_URI,
+  pinned: true,
+  displayName: 'Discover',
+  description: 'Trending content from the network'
+}
+
+export const TIMELINE_SAVED_FEED = {
+  type: 'timeline' as const,
+  value: 'following',
+  pinned: true,
+  displayName: 'Following',
+  description: 'Notes from people you follow'
+}
+
+export const VIDEO_SAVED_FEED = {
+  type: 'feed' as const,
+  value: VIDEO_FEED_URIS[0],
+  pinned: true,
+  displayName: 'Video',
+  description: 'Video content feed'
+}
+
 // Sonet centralized feed configuration
 export const SONET_FEED_CONFIG = {
   FOR_YOU: {
@@ -208,3 +254,9 @@ export const webLinks = {
   privacy: `https://sonet.app/privacy`,
   community: `https://sonet.app/guidelines`,
 }
+
+// Legacy Bluesky constants for migration compatibility
+export const PUBLIC_BSKY_SERVICE = 'https://bsky.social'
+export const BSKY_SERVICE = 'https://bsky.social'
+export const BSKY_LABELER_UserID = 'did:plc:z72i7hdynmk6r22z27h6tvur'
+export const PUBLIC_STAGING_APPVIEW_UserID = 'did:plc:z72i7hdynmk6r22z27h6tvur'

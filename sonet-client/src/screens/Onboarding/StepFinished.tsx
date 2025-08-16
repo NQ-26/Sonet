@@ -6,8 +6,8 @@ import {
   SonetGraphStarterpack,
   type Un$Typed,
 } from '@sonet/api'
-import {type SavedFeed} from '@sonet/api/dist/client/types/app/bsky/actor/defs'
-import {TID} from '@sonet/types'
+import {type SavedFeed} from '#/shims/sonet-api-types'
+import {TID} from '#/shims/sonet-types'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {useQueryClient} from '@tanstack/react-query'

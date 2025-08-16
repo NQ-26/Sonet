@@ -1,5 +1,6 @@
 import {useCallback, useEffect, useImperativeUsername, useMemo} from 'react'
-import {findNodeUsername, type ListRenderItemInfo, View} from 'react-native'
+import {type ListRenderItemInfo, View} from 'react-native'
+import {findNodeUsername} from '#/shims/findNodeUsername'
 import {
   type SonetLabelerDefs,
   type InterpretedLabelValueDefinition,

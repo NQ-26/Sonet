@@ -1,5 +1,6 @@
 import React from 'react'
-import {findNodeUsername, View} from 'react-native'
+import {View} from 'react-native'
+import {findNodeUsername} from '#/shims/findNodeUsername'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {useQueryClient} from '@tanstack/react-query'

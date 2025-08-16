@@ -1,6 +1,6 @@
 import React from 'react'
 import {type ListRenderItemInfo, View} from 'react-native'
-import {type NoteView} from '@sonet/api/dist/client/types/app/bsky/feed/defs'
+import {type NoteView} from '#/shims/sonet-api-types'
 import {msg} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {useFocusEffect} from '@react-navigation/native'

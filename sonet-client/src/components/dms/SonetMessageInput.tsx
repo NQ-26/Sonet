@@ -10,9 +10,9 @@ import {PaperPlane_Stroke2_Corner0_Rounded as SendIcon} from '#/components/icons
 import {Plus_Stroke2_Corner0_Rounded as PlusIcon} from '#/components/icons/Plus'
 import {Emoji_Stroke2_Corner0_Rounded as EmojiIcon} from '#/components/icons/Emoji'
 import {Camera_Stroke2_Corner0_Rounded as CameraIcon} from '#/components/icons/Camera'
-import {Paperclip_Stroke2_Corner0_Rounded as PaperclipIcon} from '#/components/icons/Paperclip'
+import {Paperclip_Stroke2_Corner0_Rounded as PaperclipIcon} from '#/components/icons/Times'
 import {Shield_Stroke2_Corner0_Rounded as ShieldIcon} from '#/components/icons/Shield'
-import {ShieldCheck_Stroke2_Corner0_Rounded as ShieldCheckIcon} from '#/components/icons/ShieldCheck'
+import {ShieldCheck_Stroke2_Corner0_Rounded as ShieldCheckIcon} from '#/components/icons/Shield'
 import {SonetFileAttachment} from './SonetFileAttachment'
 
 interface SonetFileAttachment {
