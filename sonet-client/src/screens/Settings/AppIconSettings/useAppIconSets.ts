@@ -40,141 +40,146 @@ export function useAppIconSets() {
     ] satisfies AppIconSet[]
 
     /**
-     * Bluesky+
+     * Sonet+
      */
     const core = [
       {
-        id: 'core_aurora',
-        name: _(msg({context: 'Name of app icon variant', message: 'Aurora'})),
+        id: 'core_blue_classic',
+        name: _(msg({context: 'Name of app icon variant', message: 'Blue Classic'})),
         iosImage: () => {
           return require(
-            `../../../../assets/app-icons/ios_icon_core_aurora.png`,
+            `../../../../assets/app-icons/ios_icon_core_blue_classic.png`,
           )
         },
         androidImage: () => {
           return require(
-            `../../../../assets/app-icons/android_icon_core_aurora.png`,
-          )
-        },
-      },
-      // {
-      //   id: 'core_bonfire',
-      //   name: _(msg({ context: 'Name of app icon variant', message: 'Bonfire' })),
-      //   iosImage: () => {
-      //     return require(`../../../../assets/app-icons/ios_icon_core_bonfire.png`)
-      //   },
-      //   androidImage: () => {
-      //     return require(`../../../../assets/app-icons/android_icon_core_bonfire.png`)
-      //   },
-      // },
-      {
-        id: 'core_sunrise',
-        name: _(msg({context: 'Name of app icon variant', message: 'Sunrise'})),
-        iosImage: () => {
-          return require(
-            `../../../../assets/app-icons/ios_icon_core_sunrise.png`,
-          )
-        },
-        androidImage: () => {
-          return require(
-            `../../../../assets/app-icons/android_icon_core_sunrise.png`,
+            `../../../../assets/app-icons/android_icon_core_blue_classic.png`,
           )
         },
       },
       {
-        id: 'core_sunset',
-        name: _(msg({context: 'Name of app icon variant', message: 'Sunset'})),
+        id: 'core_lavender',
+        name: _(msg({context: 'Name of app icon variant', message: 'Lavender'})),
         iosImage: () => {
           return require(
-            `../../../../assets/app-icons/ios_icon_core_sunset.png`,
+            `../../../../assets/app-icons/ios_icon_core_lavender.png`,
           )
         },
         androidImage: () => {
           return require(
-            `../../../../assets/app-icons/android_icon_core_sunset.png`,
+            `../../../../assets/app-icons/android_icon_core_lavender.png`,
           )
         },
       },
       {
-        id: 'core_midnight',
-        name: _(
-          msg({context: 'Name of app icon variant', message: 'Midnight'}),
-        ),
+        id: 'core_violet_vibes',
+        name: _(msg({context: 'Name of app icon variant', message: 'Violet Vibes'})),
         iosImage: () => {
           return require(
-            `../../../../assets/app-icons/ios_icon_core_midnight.png`,
+            `../../../../assets/app-icons/ios_icon_core_violet_vibes.png`,
           )
         },
         androidImage: () => {
           return require(
-            `../../../../assets/app-icons/android_icon_core_midnight.png`,
+            `../../../../assets/app-icons/android_icon_core_violet_vibes.png`,
           )
         },
       },
       {
-        id: 'core_flat_blue',
-        name: _(
-          msg({context: 'Name of app icon variant', message: 'Flat Blue'}),
-        ),
+        id: 'core_shadow_jay',
+        name: _(msg({context: 'Name of app icon variant', message: 'Shadow Jay'})),
         iosImage: () => {
           return require(
-            `../../../../assets/app-icons/ios_icon_core_flat_blue.png`,
+            `../../../../assets/app-icons/ios_icon_core_shadow_jay.png`,
           )
         },
         androidImage: () => {
           return require(
-            `../../../../assets/app-icons/android_icon_core_flat_blue.png`,
+            `../../../../assets/app-icons/android_icon_core_shadow_jay.png`,
           )
         },
       },
       {
-        id: 'core_flat_white',
-        name: _(
-          msg({context: 'Name of app icon variant', message: 'Flat White'}),
-        ),
+        id: 'core_golden_hour',
+        name: _(msg({context: 'Name of app icon variant', message: 'Golden Hour'})),
         iosImage: () => {
           return require(
-            `../../../../assets/app-icons/ios_icon_core_flat_white.png`,
+            `../../../../assets/app-icons/ios_icon_core_golden_hour.png`,
           )
         },
         androidImage: () => {
           return require(
-            `../../../../assets/app-icons/android_icon_core_flat_white.png`,
+            `../../../../assets/app-icons/android_icon_core_golden_hour.png`,
           )
         },
       },
       {
-        id: 'core_flat_black',
-        name: _(
-          msg({context: 'Name of app icon variant', message: 'Flat Black'}),
-        ),
+        id: 'core_bubblegum',
+        name: _(msg({context: 'Name of app icon variant', message: 'Bubblegum'})),
         iosImage: () => {
           return require(
-            `../../../../assets/app-icons/ios_icon_core_flat_black.png`,
+            `../../../../assets/app-icons/ios_icon_core_bubblegum.png`,
           )
         },
         androidImage: () => {
           return require(
-            `../../../../assets/app-icons/android_icon_core_flat_black.png`,
+            `../../../../assets/app-icons/android_icon_core_bubblegum.png`,
           )
         },
       },
       {
-        id: 'core_classic',
-        name: _(
-          msg({
-            context: 'Name of app icon variant',
-            message: 'Bluesky Classic™',
-          }),
-        ),
+        id: 'core_storm_gray',
+        name: _(msg({context: 'Name of app icon variant', message: 'Storm Gray'})),
         iosImage: () => {
           return require(
-            `../../../../assets/app-icons/ios_icon_core_classic.png`,
+            `../../../../assets/app-icons/ios_icon_core_storm_gray.png`,
           )
         },
         androidImage: () => {
           return require(
-            `../../../../assets/app-icons/android_icon_core_classic.png`,
+            `../../../../assets/app-icons/android_icon_core_storm_gray.png`,
+          )
+        },
+      },
+      {
+        id: 'core_ocean_depth',
+        name: _(msg({context: 'Name of app icon variant', message: 'Ocean Depth'})),
+        iosImage: () => {
+          return require(
+            `../../../../assets/app-icons/ios_icon_core_ocean_depth.png`,
+          )
+        },
+        androidImage: () => {
+          return require(
+            `../../../../assets/app-icons/android_icon_core_ocean_depth.png`,
+          )
+        },
+      },
+      {
+        id: 'core_emerald_wings',
+        name: _(msg({context: 'Name of app icon variant', message: 'Emerald Wings'})),
+        iosImage: () => {
+          return require(
+            `../../../../assets/app-icons/ios_icon_core_emerald_wings.png`,
+          )
+        },
+        androidImage: () => {
+          return require(
+            `../../../../assets/app-icons/android_icon_core_emerald_wings.png`,
+          )
+        },
+      },
+      {
+        id: 'core_arctic_jay',
+        name: _(msg({context: 'Name of app icon variant', message: 'Arctic Jay'})),
+        iosImage: () => {
+          return require(
+            `../../../../assets/app-icons/ios_icon_core_arctic_jay.png`,
+          )
+        },
+        androidImage: () => {
+          return require(
+            `../../../../assets/app-icons/android_icon_core_arctic_jay.png`,
           )
         },
       },

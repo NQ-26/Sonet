@@ -180,7 +180,7 @@ export function AppearanceSettingsScreen({}: Props) {
                 onChange={onChangeFontScale}
               />
 
-              {isNative && IS_INTERNAL && gate('debug_subscriptions') && (
+              {isNative && (
                 <>
                   <SettingsList.Divider />
                   <AppIconSettingsListItem />
